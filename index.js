@@ -1,4 +1,3 @@
-function generateRandomNumber(){
-    return Math.floor(Math.random() * 100) +1;
-}
-console.log(generateRandomNumber());
+const generateRandomNumber = require('./utils.js')
+
+console.log(`Random Number is : ${generateRandomNumber()}`);
