@@ -1,6 +1,8 @@
-import { getPosts } from "./postController.js";
-console.log(getPosts());
+import getPosts, {getPostsLength} from "./postController.js";
+// import { getPosts } from "./postController.js";
 
+console.log(getPosts());
+console.log(`Posts Length: ${getPostsLength()}`)
 
 // const {generateRandomNumber,celciousToFahrenheit} = require('./utils.js')
 
