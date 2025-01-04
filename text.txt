@@ -1,1 +1,2 @@
-this is from the text file
+Hello, I am Writing to this File
+This is appended text

@@ -1,11 +1,43 @@
-import fs from 'fs';
 
-//read\file() - callback
+import fs from 'fs/promises';
 
-fs.readFile('./text.txt', 'utf-8', (err, data) => {
-    console.log(data);
-})
+//readFile() - Promise.then()
+// fs.readFile('./text.txt', 'utf-8')
+//    .then((data) => console.log(data))
+//    .catch((err) => console.log(err));
 
-//readFileSync() - Synchronous version
-const data = fs.readFileSync('./text.txt', 'utf-8');
-console.log(data);
+// readFile() - async/await
+const readFile = async () => {
+
+    try {
+        const data = await fs.readFile('./text.txt', 'utf8');
+        console.log(data);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// write File
+const writeFile = async () => {
+    try {
+        await fs.writeFile('./text.txt', 'Hello, I am Writing to this File')
+        console.log('File Written to ...');
+    } catch (error) {
+        console.log(error);
+    };
+
+}
+
+// appendFile()
+const appendFile = async () => {
+    try{
+        await fs.appendFile('./text.txt', '\nThis is appended text');
+        console.log('File appended to ...');
+    }catch (error){
+       console.log(error);
+    }
+}; 
+
+writeFile();
+appendFile();
+readFile();
